@@ -1,0 +1,441 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Home {% endblock %}
+
+{% block content %}
+        <!-- Content -->
+        <div class="content">
+            <!-- Animated -->
+            <div class="animated fadeIn">
+                <!-- Widgets  -->
+                <p>Proyecciones Año 2021</p> 
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="stat-widget-five">
+                                    <div class="stat-icon dib flat-color-1">
+                                        <i class="pe-7s-cash"></i>
+                                    </div>
+                                    <div class="stat-content">
+                                        <div class="text-left dib">
+                                            <div class="stat-text">Bs <span class="count">372147</span></div>
+                                            <div class="stat-heading">Ganancias</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="stat-widget-five">
+                                    <div class="stat-icon dib flat-color-2">
+                                        <i class="pe-7s-cart"></i>
+                                    </div>
+                                    <div class="stat-content">
+                                        <div class="text-left dib">
+                                            <div class="stat-text">Kg <span class="count">17652</span></div>
+                                            <div class="stat-heading">Ventas</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="stat-widget-five">
+                                    <div class="stat-icon dib flat-color-3">
+                                        <i class="pe-7s-browser"></i>
+                                    </div>
+                                    <div class="stat-content">
+                                        <div class="text-left dib">
+                                            <div class="stat-text">Kg <span class="count">17652</span></div>
+                                            <div class="stat-heading">Producción</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="stat-widget-five">
+                                    <div class="stat-icon dib flat-color-4">
+                                        <i class="pe-7s-users"></i>
+                                    </div>
+                                    <div class="stat-content">
+                                        <div class="text-left dib">
+                                            <div class="stat-text">% <span class="count">30</span></div>
+                                            <div class="stat-heading">Margen de utilidad</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Widgets -->
+                <!--  Traffic  -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="box-title">Datos Históricos Quinua</h4>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-8">
+                                    <div class="card-body">
+                                        <canvas id="cha-team"></canvas>  
+                                        <!--<div id="traffic-chart" class="traffic-chart"></div>-->
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="card-body">
+                                        <div class="progress-box progress-1">
+                                            <h4 class="por-title">Producción</h4>
+                                            <div class="por-txt">9.123 Ton/año (12%)</div>
+                                            <div class="progress mb-2" style="height: 5px;">
+                                                <div class="progress-bar bg-flat-color-1" role="progressbar" style="width: 12%;" aria-valuenow="12" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                        <div class="progress-box progress-2">
+                                            <h4 class="por-title">Superficie cultivada</h4>
+                                            <div class="por-txt">16.361 Hectáreas (22%)</div>
+                                            <div class="progress mb-2" style="height: 5px;">
+                                                <div class="progress-bar bg-flat-color-2" role="progressbar" style="width: 22%;" aria-valuenow="22" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                        <div class="progress-box progress-2">
+                                            <h4 class="por-title">Rendimiento</h4>
+                                            <div class="por-txt">558 Kg/hectárea (56%)</div>
+                                            <div class="progress mb-2" style="height: 5px;">
+                                                <div class="progress-bar bg-flat-color-3" role="progressbar" style="width: 56%;" aria-valuenow="56" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                        <div class="progress-box progress-2">
+                                            <h4 class="por-title">Exportación</h4>
+                                            <div class="por-txt">4.194 Ton/año (46%)</div>
+                                            <div class="progress mb-2" style="height: 5px;">
+                                                <div class="progress-bar bg-flat-color-4" role="progressbar" style="width: 46%;" aria-valuenow="46" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </div> <!-- /.card-body -->
+                                </div>
+                            </div> <!-- /.row -->
+                            
+                            <div class="card-body"></div>
+                        </div>
+                    </div><!-- /# column -->
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="box-title">Datos Históricos Cebada</h4>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-8">
+                                    <div class="card-body">
+                                         <canvas id="TrafficChart"></canvas>   
+                                        <!--<div id="traffic-charttu" class="traffic-chart"></div>-->
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="card-body">
+                                        <div class="progress-box progress-1">
+                                            <h4 class="por-title">Producción</h4>
+                                            <div class="por-txt">19.069 Ton/año (25%)</div>
+                                            <div class="progress mb-2" style="height: 5px;">
+                                                <div class="progress-bar bg-flat-color-1" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                        <div class="progress-box progress-2">
+                                            <h4 class="por-title">Superficie cultivada</h4>
+                                            <div class="por-txt">19.765 Hectáreas (27%)</div>
+                                            <div class="progress mb-2" style="height: 5px;">
+                                                <div class="progress-bar bg-flat-color-2" role="progressbar" style="width: 27%;" aria-valuenow="27" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                        <div class="progress-box progress-2">
+                                            <h4 class="por-title">Rendimiento</h4>
+                                            <div class="por-txt">965 Kg/hectárea (96%)</div>
+                                            <div class="progress mb-2" style="height: 5px;">
+                                                <div class="progress-bar bg-flat-color-3" role="progressbar" style="width: 96%;" aria-valuenow="96" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                        <div class="progress-box progress-2">
+                                            <h4 class="por-title">Exportación</h4>
+                                            <div class="por-txt">0 Ton/año (0%)</div>
+                                            <div class="progress mb-2" style="height: 5px;">
+                                                <div class="progress-bar bg-flat-color-4" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </div> <!-- /.card-body -->
+                                </div>
+                            </div> <!-- /.row -->
+                            
+                            <div class="card-body"></div>
+                        </div>
+                    </div><!-- /# column -->
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="box-title">Datos Históricos Cañahua</h4>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-8">
+                                    <div class="card-body">
+                                        <canvas id="TrafficChartrr"></canvas> 
+                                    
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="card-body">
+                                        <div class="progress-box progress-1">
+                                            <h4 class="por-title">Producción</h4>
+                                            <div class="por-txt">463 Ton/año (1%)</div>
+                                            <div class="progress mb-2" style="height: 5px;">
+                                                <div class="progress-bar bg-flat-color-1" role="progressbar" style="width: 1%;" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                        <div class="progress-box progress-2">
+                                            <h4 class="por-title">Superficie cultivada</h4>
+                                            <div class="por-txt">635 Hectáreas (1%)</div>
+                                            <div class="progress mb-2" style="height: 5px;">
+                                                <div class="progress-bar bg-flat-color-2" role="progressbar" style="width: 1%;" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                        <div class="progress-box progress-2">
+                                            <h4 class="por-title">Rendimiento</h4>
+                                            <div class="por-txt">730 Kg/hectárea (73%)</div>
+                                            <div class="progress mb-2" style="height: 5px;">
+                                                <div class="progress-bar bg-flat-color-3" role="progressbar" style="width: 73%;" aria-valuenow="73" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                        <div class="progress-box progress-2">
+                                            <h4 class="por-title">Exportación</h4>
+                                            <div class="por-txt">2 Ton/año (1%)</div>
+                                            <div class="progress mb-2" style="height: 5px;">
+                                                <div class="progress-bar bg-flat-color-4" role="progressbar" style="width: 1%;" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </div> <!-- /.card-body -->
+                                </div>
+                            </div> <!-- /.row -->
+                            
+                            <div class="card-body"></div>
+                        </div>
+                    </div><!-- /# column -->
+                </div>
+
+                <!--  /Traffic -->
+                <div class="clearfix"></div>
+                <!-- Orders -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <strong class="card-title">Tabla Población</strong>
+                            </div>
+                            <div class="card-body">
+                                {% if Tpoblacion == 'Tabla vacia' %}
+                                 La Tabla no contiene datos.   
+                                {% else %}
+                                {% autoescape off %}
+                                {{ Tpoblacion }}
+                                {% endautoescape %}
+                                {% endif %}
+            
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+                <!-- /.orders -->
+                <!-- To Do and Live Chat -->
+                
+                <!-- /To Do and Live Chat -->
+                <!-- Calender Chart Weather  -->
+                
+                <!-- /Calender Chart Weather -->
+                <!-- Modal - Calendar - Add New Event -->
+                
+                <!-- /#event-modal -->
+                <!-- Modal - Calendar - Add Category -->
+                
+            <!-- /#add-category -->
+            </div>
+            <!-- .animated -->
+        </div>
+        <!-- /.content -->
+        
+    
+    <!-- /#right-panel -->
+
+   <!--Local Stuff-->
+   
+   <script>
+        jQuery(document).ready(function($) {
+            "use strict";
+            
+             // Team chart111111
+       
+            
+            
+            if ($('#traffic-chartt').length) {
+                var chart = new Chartist.Line('#traffic-chartt', {
+                  labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                  series: [
+                  [0, 18000, 35000,  25000,  22000,  0],
+                  [0, 33000, 15000,  20000,  15000,  300],
+                  [0, 15000, 28000,  15000,  30000,  5000]
+                  ]
+              }, {
+                  low: 0,
+                  showArea: true,
+                  showLine: false,
+                  showPoint: false,
+                  fullWidth: true,
+                  axisX: {
+                    showGrid: true
+                }
+            });
+    
+                chart.on('draw', function(data) {
+                    if(data.type === 'line' || data.type === 'area') {
+                        data.element.animate({
+                            d: {
+                                begin: 2000 * data.index,
+                                dur: 2000,
+                                from: data.path.clone().scale(1, 0).translate(0, data.chartRect.height()).stringify(),
+                                to: data.path.clone().stringify(),
+                                easing: Chartist.Svg.Easing.easeOutQuint
+                            }
+                        });
+                    }
+                });
+            }
+            
+
+
+
+            if ($('#TrafficChartt').length) {
+                var ctx = document.getElementById( "TrafficChartt" );
+                ctx.height = 150;
+                var myChart = new Chart( ctx, {
+                    type: 'line',
+                    data: {
+                        labels: [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul" ],
+                        datasets: [
+                        {
+                            label: "Visit",
+                            borderColor: "rgba(4, 73, 203,.09)",
+                            borderWidth: "1",
+                            backgroundColor: "rgba(0,194,146,0.20)",
+                            data: [ 0, 2900, 5000, 3300, 6000, 3250, 0 ]
+                        },
+                        {
+                            label: "Bounce",
+                            borderColor: "rgba(245, 23, 66, 0.9)",
+                            borderWidth: "1",
+                            backgroundColor: "rgba(245, 23, 66,.5)",
+                            pointHighlightStroke: "rgba(245, 23, 66,.5)",
+                            data: [ 0, 4200, 4500, 1600, 4200, 1500, 4000 ]
+                        },
+                        {
+                            label: "Targeted",
+                            borderColor: "rgba(40, 169, 46, 0.9)",
+                            borderWidth: "1",
+                            backgroundColor: "rgba(40, 169, 46, .5)",
+                            pointHighlightStroke: "rgba(40, 169, 46,.5)",
+                            data: [1000, 5200, 3600, 2600, 4200, 6300, 0 ]
+                        }
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        tooltips: {
+                            mode: 'index',
+                            intersect: false
+                        },
+                        hover: {
+                            mode: 'nearest',
+                            intersect: true
+                        }
+    
+                    }
+                } );
+
+            
+            }
+
+            if ($('#TrafficChart').length) {
+                var ctx = document.getElementById( "TrafficChart" );
+                ctx.height = 150;
+                var myChart = new Chart( ctx, {
+                    type: 'line',
+                    data: {
+                        labels: [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul" ],
+                        datasets: [
+                        {
+                            label: "Visit",
+                            borderColor: "rgba(4, 73, 203,.09)",
+                            borderWidth: "1",
+                            backgroundColor: "rgba(0,194,146,0.20)",
+                            data: [ 0, 2900, 5000, 3300, 6000, 3250, 0 ]
+                        },
+                        {
+                            label: "Bounce",
+                            borderColor: "rgba(245, 23, 66, 0.9)",
+                            borderWidth: "1",
+                            backgroundColor: "rgba(245, 23, 66,.5)",
+                            pointHighlightStroke: "rgba(245, 23, 66,.5)",
+                            data: [ 0, 4200, 4500, 1600, 4200, 1500, 4000 ]
+                        },
+                        {
+                            label: "Targeted",
+                            borderColor: "rgba(40, 169, 46, 0.9)",
+                            borderWidth: "1",
+                            backgroundColor: "rgba(40, 169, 46, .5)",
+                            pointHighlightStroke: "rgba(40, 169, 46,.5)",
+                            data: [1000, 5200, 3600, 2600, 4200, 4300, 0 ]
+                        }
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        tooltips: {
+                            mode: 'index',
+                            intersect: false
+                        },
+                        hover: {
+                            mode: 'nearest',
+                            intersect: true
+                        }
+    
+                    }
+                } );
+
+            
+            }
+
+            
+          
+    
+            
+        });
+    
+   </script>
+    
+    {% endblock %}

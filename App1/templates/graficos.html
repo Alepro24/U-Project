@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Principal {% endblock %}
+
+{% block content %}
+
+<div class="breadcrumbs">
+    <div class="breadcrumbs-inner">
+        <div class="row m-0">
+            <div class="col-sm-4">
+                <div class="page-header float-left">
+                    <div class="page-title">
+                        <h1>Dashboard</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="page-header float-right">
+                    <div class="page-title">
+                        <ol class="breadcrumb text-right">
+                            <li><a href="#">Dashboard</a></li>
+                            <li><a href="#">Charts</a></li>
+                            <li class="active">Chartjs</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="content">
+    <div class="animated fadeIn">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="mb-3">Team Commits </h4>
+                        <canvas id="team-chart"></canvas>
+                    </div>
+                </div>
+            </div>
+            
+
+            
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="mb-3">Producción en La Paz </h4>
+                        <canvas id="sales-chart"></canvas>
+                    </div>
+                </div>
+            </div>
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="mb-3">Superficie cultivada por Provincia (Hectareas)</h4>
+                    <canvas id="lineChartt"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+        
+    </div>
+</div>
+
+<script>
+    var ctx = document.getElementById( "lineChartt" );
+    ctx.height = 150;
+    var myChart = new Chart( ctx, {
+        type: 'line',
+        data: {
+            labels: [ "Aroma", "Bautista Saavedra", "Camacho", "Gualberto Villaroel", "Ingavi", "Inquisivi", "José Manuel Pando","Los Andes","Muñecas","Murillo","Omasuyos","Pacajes" ],
+            datasets: [
+                {
+                    label: "Quinua",
+                    borderColor: "rgba(275,95,42,0.9)",
+                    borderWidth: "1",
+                    backgroundColor: "rgba(275,95,42,0.7)",
+                    data: [ 5665, 10, 30, 2105, 859, 49, 27,905,0,40,294,1130 ]
+                            },
+                {
+                    label: "Cebada",
+                    borderColor: "rgba(0, 194, 146, 0.9)",
+                    borderWidth: "1",
+                    backgroundColor: "rgba(0, 194, 146, 0.5)",
+                    pointHighlightStroke: "rgba(26,179,148,1)",
+                    data: [ 6232, 66, 437, 3331, 2998, 467,167,1458,72,281,658,4351 ]
+                            },
+                {
+                    label: "Cañahua",
+                    borderColor: "rgba(21, 98, 34, 0.9)",
+                    borderWidth: "1",
+                    backgroundColor: "rgba(21, 98, 34, 0.9)",
+                    pointHighlightStroke: "rgba(26,179,148,1)",
+                    data: [ 11, 3, 4, 215, 131, 27, 8,7,0,0,8,211 ]
+                            }
+                        ]
+        },
+        options: {
+            responsive: true,
+            tooltips: {
+                mode: 'index',
+                intersect: false
+            },
+            hover: {
+                mode: 'nearest',
+                intersect: true
+            }
+
+        }
+    } );
+
+</script>
+
+{% endblock %}

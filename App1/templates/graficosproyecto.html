@@ -1,0 +1,139 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Principal {% endblock %}
+
+{% block content %}
+
+<div class="breadcrumbs">
+    <div class="breadcrumbs-inner">
+        <div class="row m-0">
+            <div class="col-sm-4">
+                <div class="page-header float-left">
+                    <div class="page-title">
+                        <h1>Dashboard</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="page-header float-right">
+                    <div class="page-title">
+                        <ol class="breadcrumb text-right">
+                            <li><a href="#">Dashboard</a></li>
+                            <li><a href="#">Gráficos</a></li>
+                            <li class="active">Gráficos Proyecto</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="content">
+    <div class="animated fadeIn">
+        <div class="row">
+
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="mb-3">Producción en La Paz </h4>
+                        <canvas id="sales-chart"></canvas>
+                    </div>
+                </div>
+            </div><!-- /# column -->
+            
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="mb-3">Ingresos-Egresos</h4>
+                        <canvas id="team-chart"></canvas>
+                    </div>
+                </div>
+            </div><!-- /# column -->
+
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="mb-3">Demanda vs Oferta </h4>
+                        <canvas id="barChart"></canvas>
+                    </div>
+                </div>
+            </div><!-- /# column -->
+
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="mb-3">Información nutricional (En gr) </h4>
+                        <canvas id="radarChart"></canvas>
+                    </div>
+                </div>
+            </div><!-- /# column -->
+
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="mb-3">Superficie cultivada por Provincia (Hectareas)</h4>
+                        <canvas id="lineChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="mb-3">Consumo de cereales de la competencia</h4>
+                            <canvas id="doughutChart"></canvas>
+                        </div>
+                    </div>
+                </div><!-- /# column -->
+
+            <!-- /# column -->
+
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="mb-3">Poblacion de La Paz (2020)</h4>
+                        <canvas id="singelBarChart"></canvas>
+                    </div>
+                </div>
+            </div><!-- /# column -->
+
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="mb-3">Preferencia de sabor </h4>
+                        <div id="misdatos" style="color: white;">
+                            {{myvar}}
+                        </div>
+                        <canvas id="pieChart"></canvas>
+                    </div>
+                </div>
+            </div><!-- /# column -->
+
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="mb-3">Superficie cultivada por Provincia (Hectareas)</h4>
+                        <canvas id="Chartline"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            
+
+            
+
+
+
+        </div>
+
+    </div><!-- .animated -->
+</div>
+
+    <!-- Scripts -->
+    
+   
+
+
+
+{% endblock %}

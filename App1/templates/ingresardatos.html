@@ -1,0 +1,413 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Principal {% endblock %}
+
+{% block content %}
+<div class="breadcrumbs">
+    <div class="breadcrumbs-inner">
+        <div class="row m-0">
+            <div class="col-sm-4">
+                <div class="page-header float-left">
+                    <div class="page-title">
+                        <h1>Dashboard</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="page-header float-right">
+                    <div class="page-title">
+                        <ol class="breadcrumb text-right">
+                            <li><a href="#">Dashboard</a></li>
+                            <li><a href="#">Datos</a></li>
+                            <li class="active">Ingresar Datos</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="content">
+
+    <div class="row">
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Ingresar Producto</h4> <br>
+                            {{Mensaje}}
+                        </div>
+                        <div class="card-body">
+                            <div class="default-tab">
+                                <nav>
+                                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Subir</a>
+                                        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Buscar</a>
+                                        
+                                    </div>
+                                </nav>
+                                <div class="tab-content pl-3 pt-2" id="nav-tabContent">
+                                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                                        <form action="subirProducto" method="POST" class=""> {% csrf_token %}
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                                                    <input type="text" id="producto" name="producto" placeholder="Producto" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <div class="input-group-addon"><i class="fa fa-envelope"></i></div>
+                                                    <input type="text" id="descripcion" name="descripcion" placeholder="Descripción" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="form-actions form-group"><button type="button" class="btn btn-info mb-1" data-toggle="modal" data-target="#staticModal">Subir</button></div>
+                                            
+                                            <div class="row">
+                                                <div class="col col-lg-3">
+                                                    <section class="card">
+                                                        <div class="modal fade" id="staticModal" tabindex="-1" role="dialog" aria-labelledby="staticModalLabel" aria-hidden="true">
+                                                            <div class="modal-dialog modal-sm" role="document">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <h5 class="modal-title" id="staticModalLabel">Static Modal</h5>
+                                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                            <span aria-hidden="true">&times;</span>
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        <p>
+                                                                           ¿Desea subir esta información?.
+                                                                       </p>
+                                                                   </div>
+                                                                   <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                                                    <button type="submit" class="btn btn-success mb-1" data-toggle="modal" data-target="#staticModal">Subir</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </section>
+                                                </div>
+                                            </div>
+                                            
+                                        
+                                            <!--<div class="form-actions form-group"><button type="submit" class="btn btn-success btn-sm" data-toggle="modal" data-target="#staticModal">Subir</button></div>-->
+                                        </form>
+                                    </div>
+                                    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                                        <form action="editarProducto" method="POST" class=""> {% csrf_token %}
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    
+                                                    <input type="text" id="input1-group2" name="input1-group2" placeholder="Nombre producto" class="form-control">
+                                                    <div class="input-group-btn">
+                                                        <button class="btn btn-primary">
+                                                            <i class="fa fa-search"></i> Buscar
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                                                    <input type="text" id="producto" name="producto" placeholder="Producto" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <div class="input-group-addon"><i class="fa fa-envelope"></i></div>
+                                                    <input type="text" id="descripcion" name="descripcion" placeholder="Descripción" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="form-actions form-group"><button type="button" class="btn btn-info mb-1" data-toggle="modal" data-target="#staticModallbp">Modificar</button></div>
+                                            
+                                            <div class="row">
+                                                <div class="col col-lg-3">
+                                                    <section class="card">
+                                                        <div class="modal fade" id="staticModallbp" tabindex="-1" role="dialog" aria-labelledby="staticModalLabelbp" aria-hidden="true">
+                                                            <div class="modal-dialog modal-sm" role="document">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <h5 class="modal-title" id="staticModalLabelbp">Static Modal</h5>
+                                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                            <span aria-hidden="true">&times;</span>
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        <p>
+                                                                           ¿Desea modificar esta información?.
+                                                                       </p>
+                                                                   </div>
+                                                                   <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                                                    <button type="submit" class="btn btn-success mb-1" data-toggle="modal" data-target="#staticModalbp">Modificar</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </section>
+                                                </div>
+                                            </div>
+                                            
+                                        
+                                            <!--<div class="form-actions form-group"><button type="submit" class="btn btn-success btn-sm" data-toggle="modal" data-target="#staticModal">Subir</button></div>-->
+                                        </form>
+                                    </div>
+                                    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                                        <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, irure terry richardson ex sd. Alip placeat salvia cillum iphone. Seitan alip s cardigan american apparel, butcher voluptate nisi .</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /# column -->
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Población</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="default-tab">
+
+                                <nav>
+                                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#custom-nav-home" role="tab" aria-controls="custom-nav-home" aria-selected="true">Subir</a>
+                                        
+                                    </div>
+                                </nav>
+                                <div class="tab-content pl-3 pt-2" id="nav-tabContent">
+                                    <div class="tab-pane fade show active" id="custom-nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                                        <form action="subirPoblacion" method="POST" enctype="multipart/form-data"> {% csrf_token %}
+                                            
+                                                <div class="form-actions form-group"><label for="file-input" class=" form-control-label">Seleccione el archivo csv</label></div> 
+                                                <div class="form-actions form-group"><input type="file" id="file-input" name="archivocsv" class="form-control-file"></div> 
+                                                <!-- <div class="col-6 col-md-12"><input class="btn btn-primary" type="button" value="Mostrar Datos"></div> <br> -->
+                                                
+                                            
+                                            
+                                                <div class="form-actions form-group"><button type="button" class="btn btn-info mb-1" data-toggle="modal" data-target="#staticModalpo">Subir</button></div>
+                                            
+                                            <div class="row">
+                                                <div class="col col-lg-3">
+                                                    <section class="card">
+                                                        <div class="modal fade" id="staticModalpo" tabindex="-1" role="dialog" aria-labelledby="staticModalLabelpo" aria-hidden="true">
+                                                            <div class="modal-dialog modal-sm" role="document">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <h5 class="modal-title" id="staticModalLabelpo">Static Modal</h5>
+                                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                            <span aria-hidden="true">&times;</span>
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        <p>
+                                                                            ¿Desea subir esta información?.
+                                                                       </p>
+                                                                   </div>
+                                                                   <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                                                    <button type="submit" class="btn btn-success mb-1" data-toggle="modal" data-target="#staticModalpo">Subir</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </section>
+                                                </div>
+                                            </div>
+                                            
+                                        
+                                            <!--<div class="form-actions form-group"><button type="submit" class="btn btn-success btn-sm" data-toggle="modal" data-target="#staticModal">Subir</button></div>-->
+                                        </form>
+                                    </div>
+
+                                    <div class="tab-pane fade" id="custom-nav-profile" role="tabpanel" aria-labelledby="custom-nav-profile-tab">
+                                        <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, irure terry richardson ex sd. Alip placeat salvia cillum iphone. Seitan alip s cardigan american apparel, butcher voluptate nisi .</p>
+                                    </div>
+                                    <div class="tab-pane fade" id="custom-nav-contact" role="tabpanel" aria-labelledby="custom-nav-contact-tab">
+                                        <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, irure terry richardson ex sd. Alip placeat salvia cillum iphone. Seitan alip s cardigan american apparel, butcher voluptate nisi .</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /# column -->
+            </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Cereales</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="default-tab">
+                            <nav>
+                                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-cereales" role="tab" aria-controls="nav-home" aria-selected="true">Subir cereal</a>
+                                    <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-gcereal" role="tab" aria-controls="nav-profile" aria-selected="false">Datos generales</a>
+                                    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-bcereal" role="tab" aria-controls="nav-contact" aria-selected="false">Buscar cereal</a>
+                                </div>
+                            </nav>
+                            <div class="tab-content pl-3 pt-2" id="nav-tabContent">
+                                <div class="tab-pane fade show active" id="nav-cereales" role="tabpanel" aria-labelledby="nav-home-tab">
+                                    <form action="subirCereal" method="POST" class=""> {% csrf_token %}
+                                        <div class="col-lg-6">
+                                            <div class="input-group">
+                                                <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                                                <input type="text" id="cereal" name="cereal" placeholder="Nombre" class="form-control">
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div class="col-lg-6">
+                                            <div class="input-group">
+                                                <div class="input-group-addon"><i class="fa fa-envelope"></i></div>
+                                                <input type="text" id="clase" name="clase" placeholder="Clase" class="form-control">
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div class="col-lg-6"><button type="button" class="btn btn-info mb-1" data-toggle="modal" data-target="#staticModalc">Subir</button></div>
+                                        
+                                        <div class="row">
+                                            <div class="col col-lg-3">
+                                                <section class="card">
+                                                    <div class="modal fade" id="staticModalc" tabindex="-1" role="dialog" aria-labelledby="staticModalLabelc" aria-hidden="true">
+                                                        <div class="modal-dialog modal-sm" role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="staticModalLabelc">Static Modal</h5>
+                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                        <span aria-hidden="true">&times;</span>
+                                                                    </button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <p>
+                                                                       ¿Desea subir esta información?.
+                                                                   </p>
+                                                               </div>
+                                                               <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                                                <button type="submit" class="btn btn-success mb-1" data-toggle="modal" data-target="#staticModalc">Subir</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </section>
+                                            </div>
+                                        </div>
+                                        
+                                    
+                                        <!--<div class="form-actions form-group"><button type="submit" class="btn btn-success btn-sm" data-toggle="modal" data-target="#staticModal">Subir</button></div>-->
+                                    </form>
+                                </div>
+                                <div class="tab-pane fade" id="nav-gcereal" role="tabpanel" aria-labelledby="nav-profile-tab">
+                                    <form action="subirDgeneral" method="POST" enctype="multipart/form-data"> {% csrf_token %}
+                                            
+                                        <div class="form-actions form-group"><label for="file-input" class=" form-control-label">Seleccione el archivo csv</label></div> 
+                                        <div class="form-actions form-group"><input type="file" id="file-input" name="archivocsv" class="form-control-file"></div> 
+                                        <!-- <div class="col-6 col-md-12"><input class="btn btn-primary" type="button" value="Mostrar Datos"></div> <br> -->
+                                        
+                                    
+                                    
+                                        <div class="form-actions form-group"><button type="button" class="btn btn-info mb-1" data-toggle="modal" data-target="#staticModalgc">Subir</button></div>
+                                    
+                                    <div class="row">
+                                        <div class="col col-lg-3">
+                                            <section class="card">
+                                                <div class="modal fade" id="staticModalgc" tabindex="-1" role="dialog" aria-labelledby="staticModalLabelgc" aria-hidden="true">
+                                                    <div class="modal-dialog modal-sm" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="staticModalLabelgc">Static Modal</h5>
+                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <p>
+                                                                    ¿Desea subir esta información?.
+                                                               </p>
+                                                           </div>
+                                                           <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                                            <button type="submit" class="btn btn-success mb-1" data-toggle="modal" data-target="#staticModalgc">Subir</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </section>
+                                        </div>
+                                    </div>
+                                    
+                                
+                                    <!--<div class="form-actions form-group"><button type="submit" class="btn btn-success btn-sm" data-toggle="modal" data-target="#staticModal">Subir</button></div>-->
+                                    </form>
+                                </div>
+                                <div class="tab-pane fade" id="nav-bcereal" role="tabpanel" aria-labelledby="nav-contact-tab">
+                                    <form action="editarCereal" method="POST" class=""> {% csrf_token %}
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                
+                                                <input type="text" id="input1-group2" name="input1-group2" placeholder="Nombre cereal" class="form-control">
+                                                <div class="input-group-btn">
+                                                    <button class="btn btn-primary">
+                                                        <i class="fa fa-search"></i> Buscar
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                                                <input type="text" id="cereal" name="cereal" placeholder="Cereal" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <div class="input-group-addon"><i class="fa fa-envelope"></i></div>
+                                                <input type="text" id="clase" name="clase" placeholder="Clase" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="form-actions form-group"><button type="button" class="btn btn-info mb-1" data-toggle="modal" data-target="#staticModallbc">Modificar</button></div>
+                                        
+                                        <div class="row">
+                                            <div class="col col-lg-3">
+                                                <section class="card">
+                                                    <div class="modal fade" id="staticModallbc" tabindex="-1" role="dialog" aria-labelledby="staticModalLabelbc" aria-hidden="true">
+                                                        <div class="modal-dialog modal-sm" role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="staticModalLabelbc">Static Modal</h5>
+                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                        <span aria-hidden="true">&times;</span>
+                                                                    </button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <p>
+                                                                       ¿Desea modificar esta información?.
+                                                                   </p>
+                                                               </div>
+                                                               <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                                                <button type="submit" class="btn btn-success mb-1" data-toggle="modal" data-target="#staticModallbc">Modificar</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </section>
+                                            </div>
+                                        </div>
+                                        
+                                    
+                                        <!--<div class="form-actions form-group"><button type="submit" class="btn btn-success btn-sm" data-toggle="modal" data-target="#staticModal">Subir</button></div>-->
+                                    </form>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <!-- /# column -->
+    </div><!-- .content -->
+{% endblock %}

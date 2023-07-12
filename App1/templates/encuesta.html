@@ -1,0 +1,211 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Entrenamiento {% endblock %}
+
+{% block content %}
+<div class="breadcrumbs">
+    <div class="breadcrumbs-inner">
+        <div class="row m-0">
+            <div class="col-sm-4">
+                <div class="page-header float-left">
+                    <div class="page-title">
+                        <h1>Dashboard</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="page-header float-right">
+                    <div class="page-title">
+                        <ol class="breadcrumb text-right">
+                            <li><a href="#">Dashboard</a></li>
+                            <li><a href="#">Datos</a></li>
+                            <li class="active">Encuesta</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="content">
+    <div class="animated fadeIn">
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <strong class="card-title">Data Table</strong>
+                    </div>
+                    <div class="card-body">
+                        <form action="subirEncuesta" method="POST" enctype="multipart/form-data"> {% csrf_token %}
+                        <div class="row form-group">
+                            <div class="col col-md-3"><label for="file-input" class=" form-control-label">Cargar archivo</label></div>
+                            <div class="col-12 col-md-5"><input type="file" id="file-input" name="archivocsv" class="form-control-file"></div>
+                            <div class="col-12 col-md-4"><input class="btn btn-info mb-1" type="submit" value="Mostrar Datos"></div>
+                            
+                        </div>
+                        </form>
+                        <br>
+                        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Escriba el texto que desea buscar">
+                        <br>
+                        <!--
+                        <div id="bootstrap-data-table_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4 no-footer">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-6">
+                                    <div class="dataTables_length" id="bootstrap-data-table_length">
+                                        <label>Show <select name="bootstrap-data-table_length" aria-controls="bootstrap-data-table" class="form-control form-control-sm">
+                                            <option value="10">10</option>
+                                            <option value="20">20</option>
+                                            <option value="50">50</option>
+                                            <option value="-1">All</option>
+                                        </select> entries
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-6">
+                                <div id="bootstrap-data-table_filter" class="dataTables_filter">
+                                    <label>Search:
+                                        <input type="search" class="form-control form-control-sm" placeholder="" aria-controls="bootstrap-data-table">
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        -->
+                        <div class="row">
+                            <div class="table-wrapper-scroll-y my-custom-scrollbar">
+                                
+                                {% if Mensaje == 'Error de carga de archivo' %}
+                                {{Mensaje}}
+                                {% else %}
+                                {% autoescape off %}
+                                {{ Mensaje }}
+                                {% endautoescape %}
+                                {% endif %}
+                                
+                            </div>        
+                        </div>
+                </div>
+                <!--
+                <div class="row">
+                    <div class="col-sm-12 col-md-5">
+                        <div class="dataTables_info" id="bootstrap-data-table_info" role="status" aria-live="polite">Showing 1 to 10 of 57 entries</div>
+                    </div>
+                    <div class="col-sm-12 col-md-7">
+                        <div class="dataTables_paginate paging_simple_numbers" id="bootstrap-data-table_paginate">
+                            <ul class="pagination">
+                                <li class="paginate_button page-item previous disabled" id="bootstrap-data-table_previous">
+                                    <a href="#" aria-controls="bootstrap-data-table" data-dt-idx="0" tabindex="0" class="page-link">Previous</a>
+                                </li>
+                                <li class="paginate_button page-item active">
+                                    <a href="#" aria-controls="bootstrap-data-table" data-dt-idx="1" tabindex="0" class="page-link">1</a>
+                                </li>
+                                <li class="paginate_button page-item ">
+                                    <a href="#" aria-controls="bootstrap-data-table" data-dt-idx="2" tabindex="0" class="page-link">2</a>
+                                </li>
+                                <li class="paginate_button page-item ">
+                                    <a href="#" aria-controls="bootstrap-data-table" data-dt-idx="3" tabindex="0" class="page-link">3</a>
+                                </li>
+                                <li class="paginate_button page-item ">
+                                    <a href="#" aria-controls="bootstrap-data-table" data-dt-idx="4" tabindex="0" class="page-link">4</a>
+                                </li>
+                                <li class="paginate_button page-item ">
+                                    <a href="#" aria-controls="bootstrap-data-table" data-dt-idx="5" tabindex="0" class="page-link">5</a>
+                                </li>
+                                <li class="paginate_button page-item ">
+                                    <a href="#" aria-controls="bootstrap-data-table" data-dt-idx="6" tabindex="0" class="page-link">6</a>
+                                </li>
+                                <li class="paginate_button page-item next" id="bootstrap-data-table_next">
+                                    <a href="#" aria-controls="bootstrap-data-table" data-dt-idx="7" tabindex="0" class="page-link">Next</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+
+                        <div class="col-md-12">
+                            
+                        
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+                
+            </div>
+        -->
+
+        </div>
+    </div><!-- .animated -->
+</div><!-- .content -->
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <script src="{% static 'assets/js/lib/data-table/datatables.min.js' %}"></script>
+    <script src="{% static 'assets/js/lib/data-table/dataTables.bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/js/lib/data-table/dataTables.buttons.min.js' %}"></script>
+    <script src="{% static 'assets/js/lib/data-table/buttons.bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/js/lib/data-table/jszip.min.js' %}"></script>
+    <script src="{% static 'assets/js/lib/data-table/vfs_fonts.js' %}"></script>
+    <script src="{% static 'assets/js/lib/data-table/buttons.html5.min.js' %}"></script>
+    <script src="{% static 'assets/js/lib/data-table/buttons.print.min.js' %}"></script>
+    <script src="{% static 'assets/js/lib/data-table/buttons.colVis.min.js' %}"></script>
+    <script src="{% static 'assets/js/init/datatables-init.js' %}"></script>
+
+<script type="text/javascript">
+$(document).ready(function () {
+$('#dtHorizontalVerticalExample').DataTable({
+"scrollX": true,
+"scrollY": 200,
+});
+$('.dataTables_length').addClass('bs-select');
+});
+</script>
+
+
+
+<script>
+function myFunction() {
+var input, filter, table, tr, td, i;
+input = document.getElementById("myInput");
+filter = input.value.toUpperCase();
+table = document.getElementById("dtHorizontalVerticalExample");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0]; // for column one
+    td1 = tr[i].getElementsByTagName("td")[1]; // for column two
+    td2 = tr[i].getElementsByTagName("td")[2];
+    //td3 = tr[i].getElementsByTagName("td")[3];
+    //td4 = tr[i].getElementsByTagName("td")[4];
+    //td5 = tr[i].getElementsByTagName("td")[5];
+    td6 = tr[i].getElementsByTagName("td")[6];
+    td7 = tr[i].getElementsByTagName("td")[7];
+    td8 = tr[i].getElementsByTagName("td")[8];
+    //td9 = tr[i].getElementsByTagName("td")[9];
+    td10 = tr[i].getElementsByTagName("td")[10];
+    td11 = tr[i].getElementsByTagName("td")[11];
+    //td12 = tr[i].getElementsByTagName("td")[12];
+    td13 = tr[i].getElementsByTagName("td")[13];
+    td14 = tr[i].getElementsByTagName("td")[14];
+    td15 = tr[i].getElementsByTagName("td")[15];
+    td16 = tr[i].getElementsByTagName("td")[16];
+    
+
+/* ADD columns here that you want you to filter to be used on */
+    if (td) {
+      if ( (td.innerHTML.toUpperCase().indexOf(filter) > -1) || (td1.innerHTML.toUpperCase().indexOf(filter) > -1) || (td2.innerHTML.toUpperCase().indexOf(filter) > -1) || (td6.innerHTML.toUpperCase().indexOf(filter) > -1) || (td7.innerHTML.toUpperCase().indexOf(filter) > -1) || (td8.innerHTML.toUpperCase().indexOf(filter) > -1) || (td10.innerHTML.toUpperCase().indexOf(filter) > -1) || (td11.innerHTML.toUpperCase().indexOf(filter) > -1) || (td13.innerHTML.toUpperCase().indexOf(filter) > -1) || (td14.innerHTML.toUpperCase().indexOf(filter) > -1) || (td15.innerHTML.toUpperCase().indexOf(filter) > -1) || (td16.innerHTML.toUpperCase().indexOf(filter) > -1))  {            
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+} 
+    </script>
+{% endblock %}

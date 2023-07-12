@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Entrenamiento {% endblock %}
+
+{% block content %}
+<div class="breadcrumbs">
+    <div class="breadcrumbs-inner">
+        <div class="row m-0">
+            <div class="col-sm-4">
+                <div class="page-header float-left">
+                    <div class="page-title">
+                        <h1>Datos en tablas</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="page-header float-right">
+                    <div class="page-title">
+                        <ol class="breadcrumb text-right">
+                            <li><a href="#">Dashboard</a></li>
+                            <li><a href="#">Datos</a></li>
+                            <li class="active">Tablas</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="content">
+    <div class="animated fadeIn">
+
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-header">
+                        <strong class="card-title">Tabla Producto</strong>
+                    </div>
+                    <div class="card-body">
+                        {% if Tproducto == 'Tabla vacia' %}
+                        La Tabla no contiene datos. 
+                        {% else %}
+                        {% autoescape off %}
+                        {{ Tproducto }}
+                        {% endautoescape %}
+                        {% endif %}
+    
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-header">
+                        <strong class="card-title">Tabla Cereal</strong>
+                    </div>
+                    <div class="card-body">
+                        {% if Tcereal == 'Tabla vacia' %}
+                        La Tabla no contiene datos. 
+                        {% else %}
+                        {% autoescape off %}
+                        {{ Tcereal }}
+                        {% endautoescape %}
+                        {% endif %}
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <strong class="card-title">Tabla Población</strong>
+                </div>
+                <div class="card-body">
+                    {% if Tpoblacion == 'Tabla vacia' %}
+                     La Tabla no contiene datos.   
+                    {% else %}
+                    {% autoescape off %}
+                    {{ Tpoblacion }}
+                    {% endautoescape %}
+                    {% endif %}
+
+                </div>
+            </div>
+        </div> 
+    </div>
+        
+
+       
+        
+
+    
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <strong class="card-title">Datos generales de cereales</strong>
+                </div>
+                <div class="card-body">
+                    {% if Tdgeneral == 'Tabla vacia' %}
+                    La Tabla no contiene datos. 
+                    {% else %}
+                    {% autoescape off %}
+                    {{ Tdgeneral }}
+                    {% endautoescape %}
+                    {% endif %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+
+{% endblock %}

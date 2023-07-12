@@ -1,0 +1,140 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Principal {% endblock %}
+
+{% block content %}
+<div class="breadcrumbs">
+    <div class="breadcrumbs-inner">
+        <div class="row m-0">
+            <div class="col-sm-4">
+                <div class="page-header float-left">
+                    <div class="page-title">
+                        <h1>Dashboard</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="page-header float-right">
+                    <div class="page-title">
+                        <ol class="breadcrumb text-right">
+                            <li><a href="#">Dashboard</a></li>
+                            <li><a href="#">Principal</a></li>
+                            <li class="active"></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="content">
+    <div class="animated fadeIn">
+        <div class="col-md-12">
+            <div class="card-body">
+
+                <div class="typo-headers">
+                    <h1 class="pb-2 display-4" style="text-align: center;">Filosofía de la empresa</h1>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    
+                    <div class="card-body">
+                        <h4 class="card-title mb-3">Misión</h4>
+                        <p class="card-text" style="text-align: justify;">La misión de la Empresa “Pro-Cereal” es utilizar, aprovechar y promocionar los productos naturales y con alto contenido nutricional como son los cereales andinos, que se producen en nuestro país para producir cereales instantáneos con alto contenido proteico que beneficie a la sociedad en general. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    
+                    <div class="card-body">
+                        <h4 class="card-title mb-3">Visión</h4>
+                        <p class="card-text" style="text-align: justify;">La visión de la empresa es ser una empresa innovadora, líder en el mercado nacional, produciendo cereales y otros productos, con alto contenido proteico que pueda beneficiar a la mayor cantidad de personas y familias, principalmente a los que tienen deficiencia de nutrientes en su organismo. </p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    
+                    <div class="card-body">
+                        <h4 class="card-title mb-3">Organigrama de la empresa</h4>
+                        <img class="card-img-top" src="{% static 'images/organigrama-4.png' %}" alt="Card image cap">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="card-body">
+
+                <div class="typo-headers">
+                    <h1 class="pb-2 display-4" style="text-align: center;">Machine Learning</h1>
+                </div>
+                <div class="typo-articles">
+                <p style="text-align: justify;">
+                    Machine Learning (aprendizaje automático), es una técnica de análisis de datos que enseña a los ordenadores a hacer lo que resulta natural para las personas y los animales: aprender de la experiencia.
+                    Los algoritmos de aprendizaje automático emplean métodos de cálculo para “aprender” información directamente de los datos sin depender de una ecuación predeterminada como modelo. Los algoritmos mejoran su rendimiento de forma adaptativa a medida que aumenta el número de muestras disponibles para el aprendizaje.
+                </p>
+                
+                <p style="text-align: justify;">
+                    El aprendizaje automático emplea dos tipos de técnicas: el aprendizaje supervisado, que entrena un modelo con datos de entrada y salida conocidos para que pueda predecir salidas futuras, y el aprendizaje no supervisado, que encuentra patrones ocultos o estructuras intrínsecas en los datos de entrada. (MathWorks, 2020)
+                </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <img class="card-img-top" src="https://lh3.googleusercontent.com/proxy/sFSDBsqiwOG0NfRV7kJMh8u7CRcFw8Q6Ss1T5efnFC6xqfN7azHpujMhiFTP10gRo21HNyKZ__myKMCtZ6NzRYRKDUReslVGoVBwrwa7X9IxlPhSAyDU_JiN7SSriCxF240POOdStnbdA0R-Ec1SVl8dNXk8DaDBF8cNOQ7kXqKZpIgPex5PY31w4Ac-EWM" alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-title mb-3">Aprendizaje Supervisado</h4>
+                        <p class="card-text" style="text-align: justify;">El aprendizaje automático supervisado crea un modelo que realiza predicciones en función de las pruebas en presencia de una incertidumbre. Un algoritmo de aprendizaje supervisado toma un conjunto conocido de datos de entrada y respuestas conocidas para estos datos (salidas) y entrena un modelo con objeto de generar predicciones razonables como respuesta a datos nuevos. Utilice el aprendizaje supervisado si tiene datos conocidos para la salida que está intentando predecir. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <img class="card-img-top" src="https://www.researchgate.net/profile/Jaime_Diego_Bustamante_Arce/publication/279851685/figure/fig2/AS:391429009494027@1470335357013/Figura-2-Workflow-de-Aprendizaje-No-Supervisado.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-title mb-3">Aprendizaje no Supervisado</h4>
+                        <p class="card-text" style="text-align: justify;">El aprendizaje no supervisado son un conjunto de técnicas que permiten inferir modelos para extraer conocimiento de conjuntos de datos donde a priori se desconoce. Las técnicas de aprendizaje no supervisado se pueden aplicar sin necesidad de tener los datos etiquetados para el entrenamiento. Como solo conocemos datos de entrada, pero no existen datos de salida que correspondan con las entradas, sólo se puede describir la estructura de los datos y con ello intentar encontrar algún tipo de organización que simplifique el análisis. </p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <h3>Algoritmos de aprendizaje supervisado</h3>
+        <br>
+        <div class="row">
+            
+            <div class="col-md-6">
+                <div class="card">
+                    <img class="card-img-top" src="https://www.statdeveloper.com/wp-content/uploads/2020/02/curva-sigmoide.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-title mb-3">Algoritmo - Regresión Logística</h4>
+                        <p class="card-text" style="text-align: justify;">La Regresión Logística es un método estadístico para predecir clases binarias. El resultado o variable objetivo es de naturaleza dicotómica. Dicotómica significa que solo hay dos clases posibles. Por ejemplo, se puede utilizar para problemas de detección de cáncer o calcular la probabilidad de que ocurra un evento.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <img class="card-img-top" src="https://3.bp.blogspot.com/-qOmM-pfdLl4/WEg4GZcDqMI/AAAAAAAAERI/s03U0jKWJicKrHWE0Ig1LZsSGP01dZzewCLcB/s1600/Decision_Tree_2.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-title mb-3">Algoritmo - Árbol de decisión</h4>
+                        <p class="card-text" style="text-align: justify;">Un árbol de decisión en Machine Learning es una estructura de árbol similar a un diagrama de flujo donde un nodo interno representa una característica (o atributo), la rama representa una regla de decisión y cada nodo hoja representa el resultado.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
