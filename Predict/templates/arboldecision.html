@@ -1,0 +1,111 @@
+{{% extends "base.html" %}
+{% load static %}
+{% block title %} Entrenamiento {% endblock %}
+
+{% block content %}
+<div class="breadcrumbs">
+    <div class="breadcrumbs-inner">
+        <div class="row m-0">
+            <div class="col-sm-4">
+                <div class="page-header float-left">
+                    <div class="page-title">
+                        <h1>Dashboard</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="page-header float-right">
+                    <div class="page-title">
+                        <ol class="breadcrumb text-right">
+                            <li><a href="#">Dashboard</a></li>
+                            <li><a href="#">Modelos</a></li>
+                            <li class="active">Arbol de decisión</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="content">
+    <div class="animated fadeIn">
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <strong class="card-title">Tabla de Datos</strong>
+                    </div>
+                    <div class="card-body">
+                        <form action="arbold" method="POST" enctype="multipart/form-data"> {% csrf_token %}
+                        <div class="row form-group">
+                            <div class="col col-md-6"><label for="file-input" class=" form-control-label">¿Está seguro de entrenar el modelo con los datos mostrados a continuación?</label></div>
+                            
+                            <div class="col-12 col-md-6"><input class="btn btn-info mb-1" type="submit" value="Si, estoy seguro"></div>
+                        </div>
+                        </form>
+
+                        <div class="table-wrapper-scroll-y my-custom-scrollbar">
+                            {% if Mensaje == 'Error de carga de archivo' %}
+                            {{Mensaje}}
+                            {% else %}
+                            {% autoescape off %}
+                            {{ Mensaje }}
+                            {% endautoescape %}
+                            {% endif %}
+                        </div>
+
+                        
+                            {{Ndatos}} <br>
+                            
+                            {{Score}} <br>
+                            {{Matrizlista}} <br>
+                            
+                        
+                            
+                    
+                            {{NuevoP}} <br>
+                            Matriz de confusion:<br>
+                            {{Matriz}} <br>
+                            {{Conteoceros}} <br>
+                            {{Profundidad}} <br>
+
+                            Pronostico de la demanda:
+                            <div class="table-wrapper-scroll-y my-custom-scrollbar">
+                                {% if Mensaje == 'Error de carga de archivo' %}
+                                {{Dt}}
+                                {% else %}
+                                {% autoescape off %}
+                                {{ Dt }}
+                                {% endautoescape %}
+                                {% endif %}
+                            </div>
+                    </div>
+                </div>
+                
+            </div>
+
+
+        </div>
+    </div><!-- .animated -->
+</div><!-- .content -->
+
+
+    <script src="{% static 'assets/js/lib/data-table/datatables.min.js' %}"></script>
+    <script src="{% static 'assets/js/lib/data-table/dataTables.bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/js/lib/data-table/dataTables.buttons.min.js' %}"></script>
+    <script src="{% static 'assets/js/lib/data-table/buttons.bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/js/lib/data-table/jszip.min.js' %}"></script>
+    <script src="{% static 'assets/js/lib/data-table/vfs_fonts.js' %}"></script>
+    <script src="{% static 'assets/js/lib/data-table/buttons.html5.min.js' %}"></script>
+    <script src="{% static 'assets/js/lib/data-table/buttons.print.min.js' %}"></script>
+    <script src="{% static 'assets/js/lib/data-table/buttons.colVis.min.js' %}"></script>
+    <script src="{% static 'assets/js/init/datatables-init.js' %}"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+      $('#bootstrap-data-table-export').DataTable();
+  } );
+</script>
+{% endblock %}
